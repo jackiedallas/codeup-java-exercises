@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -108,7 +109,18 @@ public class HelloWorld {
         num++;
         num++;
         System.out.println(num);
+        System.out.println("---------------");
 
+        String name = "codeup";
+        String greeting = "Salutations";
+        System.out.printf("Hello there, %s. Nice to see you.\n", name);
+        System.out.printf("%s, %s! \n", greeting, name);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Something: ");
+        String userInput = scanner.next();
+
+        System.out.println("You entered: --> \"" + userInput + "\" <--");
 
     }
 
