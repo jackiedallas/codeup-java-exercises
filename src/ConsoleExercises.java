@@ -6,7 +6,12 @@ public class ConsoleExercises {
 
         double pi = 3.14159;
         String mathString = "PI is:";
+        System.out.printf("%s %s \n",mathString, pi);
 
-        System.out.printf("%s %s",mathString, pi);
+        System.out.print("How old are you? ");
+        String userInput = scanner.next();
+        System.out.printf("Wow, you've survived %s years on Earth. Congratulations!", userInput);
+
+
     }
 }
