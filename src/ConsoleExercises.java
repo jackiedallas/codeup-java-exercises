@@ -9,7 +9,7 @@ public class ConsoleExercises {
         System.out.printf("%s %s \n",mathString, pi);
 
         System.out.print("How old are you? ");
-        String userInput = scanner.next();
+        String userInput = scanner.nextLine();
         System.out.printf("Wow, you've survived %s years on Earth. Congratulations!", userInput);
 
 
