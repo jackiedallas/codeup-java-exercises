@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class HelloWorld {
     public static void main(String[] args) {
 //        System.out.print("""
@@ -55,7 +57,59 @@ public class HelloWorld {
 
         // Change your code to declare myNumber as a float. Assign the value 3.14 to it. What happens? What are two ways we could fix this? By Declaring myNumber as a double.
         myNumber = 3.14;
-        System.out.print("Double data type number is: " + myNumber);
+        System.out.print("Double data type number is: " + myNumber + "\n");
+        System.out.print("---------------------- \n");
+        // 10. Copy and paste the following code blocks one at a time and execute them
+
+        int x = 5;
+        System.out.println(x++);
+        System.out.println(x);
+        System.out.println("-------------- above this line is an example of post-increment, and below is an example of pre-increment");
+        int y = 5;
+        System.out.println(++y);
+        System.out.println(y);
+
+        // What is the difference between the above code blocks? Explain why the code outputs what it does. x is post incremented and y is pre incremented
+
+        // 11. Try to create a variable named class. What happens? Error message: cannot resolve symbol 'var'
+//        var class;
+
+        // 12. Object is the most generic type in Java. You can assign any value to a variable of type Object. What do you think will happen when the following code is run?
+//        String theNumberThree = "three";
+//        Object o = theNumberThree;
+//        int three = (int) o;
+//
+//        int three = (int) "three";
+
+        // What are the two different types of errors we are observing? java: variable three is already defined in method main(java.lang.String[]) & java: incompatible types: java.lang.String cannot be converted to int
+
+        // 13. Rewrite the following expressions using the relevant shorthand assignment operators:
+        System.out.println("---------------");
+        int z = 4;
+//        x = x + 5;
+        z += 5;
+        System.out.println("4 + 5 = " + z);
+
+        int n = 3;
+        int m = 4;
+        m *= n;
+        System.out.println("3 x 4 = " + m);
+
+        int o = 10;
+        int p = 2;
+        o /= p;
+        p -= o;
+        System.out.println("10 / 2 = " + o);
+        System.out.println("2 - 5 = " + p);
+        System.out.println("---------------");
+
+        // 14. What happens if you assign a value to a numerical variable that is larger (or smaller) than the type can hold? What happens if you increment a numeric variable past the type's capacity?
+        byte num = 127;
+        num++;
+        num++;
+        System.out.println(num);
+
+
     }
 
 }
