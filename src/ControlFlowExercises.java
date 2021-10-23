@@ -16,10 +16,17 @@ public class ControlFlowExercises {
 //                i += 2;
 //            } while (i <= 100);
 
-            int i = 100;
+//            int i = 100;
+//            do {
+//                System.out.println("Count is: " + i);
+//                i -= 5;
+//            } while (i >= -10);
+
+            long i = 2;
             do {
+
                 System.out.println("Count is: " + i);
-                i -= 5;
-            } while (i >= -10);
+                i *= i;
+            } while (i <= 1000000);
     }
 }
