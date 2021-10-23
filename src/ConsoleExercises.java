@@ -45,7 +45,7 @@ public class ConsoleExercises {
         System.out.printf("The area of your room is %s sqFt.", area);
         System.out.printf("\nThe perimeter of your room is %s Ft.", perimeter);
 
-        
+
 
 
     }
