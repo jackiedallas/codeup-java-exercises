@@ -85,18 +85,45 @@ public class ControlFlowExercises {
         System.out.print("What is your overall grade for Codeup? ");
         int userGrade = userInput.nextInt();
 
+//        if ((userGrade <= 100) && (userGrade >= 88)) {
+//            System.out.println("Your letter grade is an A");
+//        } else if (userGrade >= 80) {
+//            System.out.println("Your letter grade is a B");
+//        } else if (userGrade >= 67) {
+//            System.out.println("Your letter grade is a C");
+//        } else if (userGrade >= 60) {
+//            System.out.println("Your letter grade is a D");
+//        } else {
+//            System.out.println("Your letter grade is a F");
+//        }
+
         if ((userGrade <= 100) && (userGrade >= 88)) {
-            System.out.println("Your letter grade is an A");
+            if (userGrade >= 95) {
+                System.out.println("Your letter grade is an A+");
+            } else {
+                System.out.println("Your letter grade is an A-");
+            }
         } else if (userGrade >= 80) {
-            System.out.println("Your letter grade is a B");
-        } else if (userGrade >= 67) {
-            System.out.println("Your letter grade is a C");
+            if (userGrade >= 85) {
+                System.out.println("Your letter grade is a B+");
+            } else {
+                System.out.println("Your letter is a B-");
+            }
+        } else if (userGrade >= 67){
+            if (userGrade >= 75) {
+                System.out.println("Your letter grade is a C+");
+            } else {
+                System.out.println("Your letter is a C-");
+            }
         } else if (userGrade >= 60) {
-            System.out.println("Your letter grade is a D");
+            if (userGrade >= 63) {
+                System.out.println("Your letter grade is a D+");
+            } else {
+                System.out.println("Your letter is a D-");
+            }
         } else {
             System.out.println("Your letter grade is a F");
         }
-
 
        }
     }
