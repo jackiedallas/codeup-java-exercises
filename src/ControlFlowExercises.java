@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
 
@@ -46,16 +48,22 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //        }
 
-        for (int i = 1; i <= 100 ; i++) {
-            if ((i % 3 == 0) && (i % 5 == 0)) {
-                System.out.println("Fizzbuzz");
-            } else if (i % 3 == 0) {
-                System.out.println("Fizz");
-            } else if (i % 5 == 0) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
-            }
-        }
+//        for (int i = 1; i <= 100 ; i++) {
+//            if ((i % 3 == 0) && (i % 5 == 0)) {
+//                System.out.println("Fizzbuzz");
+//            } else if (i % 3 == 0) {
+//                System.out.println("Fizz");
+//            } else if (i % 5 == 0) {
+//                System.out.println("Buzz");
+//            } else {
+//                System.out.println(i);
+//            }
+//        }
+
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.print("Would you like to enter a number? ");
+        String userResponse = userInput.nextLine();
+        System.out.printf("%s", userResponse);
     }
 }
