@@ -62,25 +62,42 @@ public class ControlFlowExercises {
 
         Scanner userInput = new Scanner(System.in);
 
-        System.out.print("Would you like to enter a number? yes or no: ");
-        String userResponse = userInput.nextLine();
-//        System.out.printf("%s", userResponse);
+//        System.out.print("Would you like to enter a number? yes or no: ");
+//        String userResponse = userInput.nextLine();
+//
+//        if (userResponse.equals("yes")) {
+//            System.out.print("Enter a number 1-100: ");
+//            int userNum = userInput.nextInt();
+//            System.out.print("Great, Here is a table of squares and cubes!");
+//            System.out.println("\nnumber | squared | cubed");
+//            System.out.print("------ | ------  | ------");
+//            for (int i = 1; i <= userNum; i++) {
+//                int squared = i*i;
+//                int cubed = i*i*i;
+//                String row = String.format("%-6d | %-7d | %d", i, squared,cubed);
+////                System.out.println("\n" + i + " | " + (int)Math.pow(i, 2) + " | " + (int)Math.pow(i, 3));
+//                System.out.println("\n"+ row);
+//            }
+//        } else {
+//            System.out.println("No? That's ok, maybe another time.");
+//        }
 
-        if (userResponse.equals("yes")) {
-            System.out.print("Enter a number 1-100: ");
-            int userNum = userInput.nextInt();
-            System.out.print("Great, Here is a table of squares and cubes!");
-            System.out.println("\nnumber | squared | cubed");
-            System.out.print("------ | ------  | ------");
-            for (int i = 1; i <= userNum; i++) {
-                int squared = i*i;
-                int cubed = i*i*i;
-                String row = String.format("%-6d | %-7d | %d", i, squared,cubed);
-//                System.out.println("\n" + i + " | " + (int)Math.pow(i, 2) + " | " + (int)Math.pow(i, 3));
-                System.out.println("\n"+ row);
-            }
+        System.out.print("What is your overall grade for Codeup? ");
+        int userGrade = userInput.nextInt();
+
+        if ((userGrade <= 100) && (userGrade >= 88)) {
+            System.out.println("Your letter grade is an A");
+        } else if (userGrade >= 80) {
+            System.out.println("Your letter grade is a B");
+        } else if (userGrade >= 67) {
+            System.out.println("Your letter grade is a C");
+        } else if (userGrade >= 60) {
+            System.out.println("Your letter grade is a D");
         } else {
-            System.out.println("No? That's ok, maybe another time.");
+            System.out.println("Your letter grade is a F");
         }
+
+
+       }
     }
-}
+
