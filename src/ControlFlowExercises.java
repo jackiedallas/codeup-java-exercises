@@ -7,7 +7,7 @@ public class ControlFlowExercises {
             // a. While
 //            int i = 5;
 //            while (i <= 15) {
-//                System.out.println("Count is: " + i);
+//                System.out.print(i + " ");
 //                i++;
 //            }
 
@@ -62,25 +62,25 @@ public class ControlFlowExercises {
 
         Scanner userInput = new Scanner(System.in);
 
-//        System.out.print("Would you like to enter a number? yes or no: ");
-//        String userResponse = userInput.nextLine();
-//
-//        if (userResponse.equals("yes")) {
-//            System.out.print("Enter a number 1-100: ");
-//            int userNum = userInput.nextInt();
-//            System.out.print("Great, Here is a table of squares and cubes!");
-//            System.out.println("\nnumber | squared | cubed");
-//            System.out.print("------ | ------  | ------");
-//            for (int i = 1; i <= userNum; i++) {
-//                int squared = i*i;
-//                int cubed = i*i*i;
-//                String row = String.format("%-6d | %-7d | %d", i, squared,cubed);
-////                System.out.println("\n" + i + " | " + (int)Math.pow(i, 2) + " | " + (int)Math.pow(i, 3));
-//                System.out.println("\n"+ row);
-//            }
-//        } else {
-//            System.out.println("No? That's ok, maybe another time.");
-//        }
+        System.out.print("Would you like to enter a number? yes or no: ");
+        String userResponse = userInput.nextLine();
+
+        if (userResponse.equals("yes")) {
+            System.out.print("Enter a number 1-100: ");
+            int userNum = userInput.nextInt();
+            System.out.print("Great, Here is a table of squares and cubes!");
+            System.out.println("\nnumber | squared | cubed");
+            System.out.print("------ | ------  | ------");
+            for (int i = 1; i <= userNum; i++) {
+                int squared = i*i;
+                int cubed = i*i*i;
+                String row = String.format("%-6d | %-7d | %d", i, squared,cubed);
+//                System.out.println("\n" + i + " | " + (int)Math.pow(i, 2) + " | " + (int)Math.pow(i, 3));
+                System.out.println("\n"+ row);
+            }
+        } else {
+            System.out.println("No? That's ok, maybe another time.");
+        }
 
         System.out.print("What is your overall grade for Codeup? ");
         int userGrade = userInput.nextInt();
