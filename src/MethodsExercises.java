@@ -7,7 +7,8 @@ public class MethodsExercises {
 //        subtraction(20, 9);
 //        division(50, 10);
 //        modulus(4, 2);
-        getInteger(1, 10);
+//        getInteger(1, 10);
+        factorial(1, 10);
     }
 
     public static int addition(int x, int y) {
@@ -48,9 +49,8 @@ public class MethodsExercises {
         Scanner sc = new Scanner(System.in);
         boolean isValid;
         do {
-
             boolean validNum;
-            do {
+            do { // Nested another do while to repeat prompt if number wasn't in the given range.
                 System.out.printf("Enter a number between %s and %s: ", min, max);
                 userNum = sc.nextInt();
                 validNum = ((userNum <= max) && (userNum >= min));
@@ -65,5 +65,33 @@ public class MethodsExercises {
             isValid = anotherNumber.equalsIgnoreCase("y");
         } while(isValid);
         return userNum;
+    }
+
+    public static void factorial (int startNum, int stopNum) {
+        int userNum;
+        Scanner sc = new Scanner(System.in);
+        boolean isValid;
+        do {
+            boolean validNum;
+            do { // Nested another do while to repeat prompt if number wasn't in the given range.
+                System.out.printf("Enter a number between %s and %s: ", startNum, stopNum);
+                userNum = sc.nextInt();
+                validNum = ((userNum <= stopNum) && (userNum >= startNum));
+                if (validNum) {
+                    long factorial = 1;
+                    for (int i = 1; i <= userNum; i++) {
+                        factorial *= i;
+                    }
+                    System.out.printf("Great! The Factorial of %s is: %s", userNum, factorial);
+                }
+            } while (!validNum);
+
+            sc.nextLine();
+            System.out.print("\nDo you want to continue? (Y/N) ");
+            String anotherNumber = sc.nextLine();
+            isValid = anotherNumber.equalsIgnoreCase("y");
+        } while(isValid);
+
+
     }
 }
