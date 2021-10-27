@@ -8,7 +8,12 @@ public class MethodsExercises {
 //        division(50, 10);
 //        modulus(4, 2);
 //        getInteger(1, 10);
-        factorial(1, 10);
+//        factorial(1, 10);
+        System.out.print("Enter a number between 1 and 10: ");
+        int userNumber = getInteger(1, 10);
+        long factNum = factorial(userNumber);
+        System.out.printf("%s! = %s", userNumber, factNum);
+
     }
 
     public static int addition(int x, int y) {
@@ -47,51 +52,20 @@ public class MethodsExercises {
     public static int getInteger(int min, int max) {
         int userNum;
         Scanner sc = new Scanner(System.in);
-        boolean isValid;
-        do {
-            boolean validNum;
-            do { // Nested another do while to repeat prompt if number wasn't in the given range.
-                System.out.printf("Enter a number between %s and %s: ", min, max);
-                userNum = sc.nextInt();
-                validNum = ((userNum <= max) && (userNum >= min));
-                if (validNum) {
-                    System.out.printf("Great! %s was a perfect number!", userNum);
-                }
-            } while (!validNum);
-
-            sc.nextLine();
-            System.out.print("\nDo you want to continue? (Y/N) ");
-            String anotherNumber = sc.nextLine();
-            isValid = anotherNumber.equalsIgnoreCase("y");
-        } while(isValid);
+        userNum = sc.nextInt();
+        boolean validNum = ((userNum <= max) && (userNum >= min));
+        if (!validNum){
+            System.out.println("Not a valid number.");
+        }
         return userNum;
     }
 
-    public static void factorial (int startNum, int stopNum) {
-        int userNum;
-        Scanner sc = new Scanner(System.in);
-        boolean isValid;
-        do {
-            boolean validNum;
-            do { // Nested another do while to repeat prompt if number wasn't in the given range.
-                System.out.printf("Enter a number between %s and %s: ", startNum, stopNum);
-                userNum = sc.nextInt();
-                validNum = ((userNum <= stopNum) && (userNum >= startNum));
-                if (validNum) {
-                    long factorial = 1;
-                    for (int i = 1; i <= userNum; i++) {
-                        factorial *= i;
-                    }
-                    System.out.printf("Great! The Factorial of %s is: %s", userNum, factorial);
-                }
-            } while (!validNum);
-
-            sc.nextLine();
-            System.out.print("\nDo you want to continue? (Y/N) ");
-            String anotherNumber = sc.nextLine();
-            isValid = anotherNumber.equalsIgnoreCase("y");
-        } while(isValid);
-
-
+    public static long factorial (int userInput) {
+        long result = 1;
+        for (int i = 1; i <= userInput ; i++) {
+            result *= i;
+        }
+//        System.out.printf("Great, %s! = %s", userNum, result);
+        return result;
     }
 }
