@@ -28,15 +28,16 @@ public class HighLow {
     }
     public static void guessingGame() {
         boolean confirm;
-        int totalGuesses = 1;
+
         do {
+            int totalGuesses = 0;
             boolean gameWon = false;
             System.out.print("Welcome to the Guessing Game. I've chosen an integer between 1 and 100. Take a guess: ");
+            totalGuesses++;
             Scanner sc = new Scanner(System.in);
             int numberToGuess = randomNumber();
             while (!gameWon) {
                 int userGuess = sc.nextInt();
-
                 if (userGuess > numberToGuess) {
                     totalGuesses++;
                     System.out.print("Too high, guess again.. ");
@@ -56,6 +57,7 @@ public class HighLow {
             String playAgain = sc.nextLine();
             confirm = playAgain.equalsIgnoreCase("y");
         } while(confirm);
+        System.out.println("Thanks for playing!");
     }
 
     public static int randomNumber() {
