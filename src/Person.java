@@ -1,61 +1,48 @@
 public class Person {
-    // A class: This is the template or blueprint for a 'person'
 
-
-
-    // Instance variables
-     public String firstName;
-     public String lastName;
-     public int age;
-
-
-     // instance method
-    public String joinChat() {
-        return lastName + " , " + firstName + " has joined the chat!";
+    // create a private name property
+    private String name;
+    // Constructor
+    public Person (String personName) {
+        this.name = personName;
+    }
+    // Methods
+    public String getName() {
+        return name;
     }
 
-    // static variable property -- representing world population
-    public static long worldPop = 7_900_000_000L;
+    public void setName(String personName) {
+        this.name = personName;
+    }
 
+    public void sayHello() {
+        System.out.println("Hello");
+    }
+    // main
     public static void main(String[] args) {
-        Person jackie = new Person();
-        jackie.firstName = "Jackie";
-        jackie.lastName = "Dallas";
-        jackie.age = 29;
-
-        System.out.println("Jackie = "  + jackie);
-        System.out.println(jackie.firstName + " " + jackie.lastName + " is my name.");
-        System.out.printf("%s %s is my name.", jackie.firstName, jackie.lastName);
-        System.out.println();
-        System.out.println(jackie.joinChat());
-
-        System.out.println("worldPop = " + worldPop);
-
-        Person douglas = new Person();
-        douglas.firstName = "Douglas";
-        douglas.lastName = "Hirsh";
-
-        // douglas didn't get counted in the worldPop, how would I add him in the count?
-
-        // would I access the variable alone?
-        // maybe instead access through the class name and dot notation
-        Person.worldPop += 1;
-
-        System.out.println("worldPop with douglas = " + worldPop);
-//        System.out.println("douglas.worldPop = " + douglas.worldPop); // this WILL work, but it is NOT this proper code and NOT best practice!!
-
-        // can we talk to Person.firstName??
-//        System.out.println(Person.firstName); // compile time error, no going forward until fixed.
-
-        // Each person has a different name, but the world population is the same for all people.
-        // You cannot access an instanced variable in a static context (only individual people have names, not people in general)
+//        Person person1 = new Person("John");
+//        Person person2 = new Person("John");
+//        System.out.println(person1.getName().equals(person2.getName())); // true because both person 1 and person 2 have the same name "John"
+//        System.out.println(person1 == person2); // false because just because they have the same name of "John", however they are still two different people
 
 
+//        Person person1 = new Person("John");
+//        Person person2 = person1;
+//        System.out.println(person1 == person2); // this is true, however, redundant.
+
+//        Person person1 = new Person("John");
+//        Person person2 = person1;
+//        System.out.println(person1.getName());
+//        System.out.println(person2.getName());
+//        person2.setName("Jane");
+//        System.out.println(person1.getName());
+//        System.out.println(person2.getName()); // Didn't expect this to compile, however, it did. and because person1 was reassigned to person2 all changes are applied to both person 1 and person 2.
 
 
 
 
     }
+
 
 
 
