@@ -1,5 +1,6 @@
 import java.lang.Math;
 import java.util.Scanner;
+
 // Game Development 101
 //
 //Welcome to the world of game development!
