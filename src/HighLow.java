@@ -25,14 +25,10 @@ import java.util.Scanner;
 public class HighLow {
     public static void main(String[] args) {
       guessingGame();
-
-
     }
-
-
     public static void guessingGame() {
         boolean confirm;
-
+        int totalGuesses = 1;
         do {
             boolean gameWon = false;
             System.out.print("Welcome to the Guessing Game. I've chosen an integer between 1 and 100. Take a guess: ");
@@ -42,11 +38,14 @@ public class HighLow {
                 int userGuess = sc.nextInt();
 
                 if (userGuess > numberToGuess) {
+                    totalGuesses++;
                     System.out.print("Too high, guess again.. ");
                 } else if (userGuess < numberToGuess) {
+                    totalGuesses++;
                     System.out.print("Too low, guess again.. ");
                 } else {
                     System.out.println("Good guess, " + numberToGuess + " is precisely the number I chose!");
+                    System.out.println("It took you " + totalGuesses + " tries to win the game.");
                     gameWon = true;
                 }
 
@@ -57,32 +56,7 @@ public class HighLow {
             String playAgain = sc.nextLine();
             confirm = playAgain.equalsIgnoreCase("y");
         } while(confirm);
-
-
-
-
     }
-
-
-//    public static void game() {
-//
-//        boolean confirm = false;
-//        int randomNumber = randomNumber();
-//        while (!confirm) {
-//            Scanner sc = new Scanner(System.in);
-//            System.out.println("Pick a number from 1 to 100");
-//            int userInput = sc.nextInt();
-//
-//            if(userInput < randomNumber) {
-//                System.out.println("Higher!");
-//            } else if(userInput > randomNumber) {
-//                System.out.println("Lower!");
-//            } else {
-//                System.out.println("Good guess!");
-//                confirm = true;
-//            }
-//        }
-//    }
 
     public static int randomNumber() {
             int max = 100;
