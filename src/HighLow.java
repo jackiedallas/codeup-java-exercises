@@ -32,16 +32,22 @@ public class HighLow {
         do {
             int totalGuesses = 0;
             boolean gameWon = false;
-            System.out.print("Welcome to the Guessing Game. I've chosen an integer between 1 and 100. Take a guess: ");
+            System.out.print("Welcome to the Guessing Game. I've chosen an integer between 1 and 100. You have 5 chances to choose the right number. Take a guess: ");
             totalGuesses++;
             Scanner sc = new Scanner(System.in);
             int numberToGuess = randomNumber();
             while (!gameWon) {
                 int userGuess = sc.nextInt();
+
+
                 if (userGuess > numberToGuess) {
                     totalGuesses++;
                     System.out.print("Too high, guess again.. ");
-                } else if (userGuess < numberToGuess) {
+                } else if(totalGuesses == 5) {
+                    gameWon = true;
+                    System.out.println("That was your 5th chance, better luck next time.");
+                }
+                else if (userGuess < numberToGuess) {
                     totalGuesses++;
                     System.out.print("Too low, guess again.. ");
                 } else {
