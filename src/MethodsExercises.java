@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class MethodsExercises {
     public static void main(String[] args) {
@@ -9,10 +10,13 @@ public class MethodsExercises {
 //        modulus(4, 2);
 //        getInteger(1, 10);
 //        factorial(1, 10);
-        System.out.print("Enter a number between 1 and 10: ");
-        int userNumber = getInteger(1, 10);
-        long factNum = factorial(userNumber);
-        System.out.printf("%s! = %s", userNumber, factNum);
+//        System.out.print("Enter a number between 1 and 10: ");
+//        int userNumber = getInteger(1, 10);
+//        long factNum = factorial(userNumber);
+//        System.out.printf("%s! = %s", userNumber, factNum);
+
+//        System.out.println(randomNumber());
+        diceRoll();
 
     }
 
@@ -68,4 +72,36 @@ public class MethodsExercises {
 //        System.out.printf("Great, %s! = %s", userNum, result);
         return result;
     }
+
+    public static int randomNumber(int numOfSides){
+        int min = 1;
+        int range = numOfSides - min + 1;
+        int random = 0;
+        for (int i = 0; i < 6; i++) {
+            random = (int)(Math.random() * range) + min;
+        }
+        return random;
+    }
+
+    public static void diceRoll() {
+        Scanner sc = new Scanner(System.in);
+        boolean confirm;
+        do {
+
+            System.out.print("Enter a number of sides for a pair of dice: ");
+            int numOfSides = sc.nextInt();
+            System.out.println("Your first dice rolled a " + randomNumber(numOfSides));
+            System.out.println("Your second dice rolled a " + randomNumber(numOfSides));
+
+
+            sc.nextLine();
+            System.out.print("Do you want to roll again? [Y/N] ");
+            String rollAgain = sc.nextLine();
+            confirm = rollAgain.equalsIgnoreCase("y");
+        } while (confirm);
+
+
+    }
+
+
 }
