@@ -16,7 +16,7 @@ public class MethodsExercises {
 //        System.out.printf("%s! = %s", userNumber, factNum);
 
 //        System.out.println(randomNumber());
-        diceRoll();
+//        diceRoll();
 
     }
 
@@ -102,6 +102,8 @@ public class MethodsExercises {
 
 
     }
+
+
 
 
 }
