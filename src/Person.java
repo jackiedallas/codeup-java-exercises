@@ -1,4 +1,7 @@
+import util.Input;
+
 public class Person {
+
 
     // create a private name property
     private String name;
@@ -36,8 +39,10 @@ public class Person {
 //        System.out.println(person2.getName());
 //        person2.setName("Jane");
 //        System.out.println(person1.getName());
-//        System.out.println(person2.getName()); // Didn't expect this to compile, however, it did. and because person1 was reassigned to person2 all changes are applied to both person 1 and person 2.
+//        System.out.println(person2.getName()); // Didn't expect this to compile, however, it did. and because person1 was reassigned to person2 all changes applied to both person 1 and person 2.
 
+
+        Input input = new Input();
 
 
 
