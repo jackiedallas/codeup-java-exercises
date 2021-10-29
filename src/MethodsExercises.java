@@ -8,7 +8,7 @@ public class MethodsExercises {
 //        subtraction(20, 9);
 //        division(50, 10);
 //        modulus(4, 2);
-//        getInteger(1, 10);
+        System.out.println("getInteger(1, 10) = " + getInteger(1, 10));
 //        factorial(1, 10);
 //        System.out.print("Enter a number between 1 and 10: ");
 //        int userNumber = getInteger(1, 10);
@@ -56,12 +56,14 @@ public class MethodsExercises {
     public static int getInteger(int min, int max) {
         int userNum;
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number between 1 and 10: ");
         userNum = sc.nextInt();
         boolean validNum = ((userNum <= max) && (userNum >= min));
-        if (!validNum){
-            System.out.println("Not a valid number.");
+        if (validNum){
+            return userNum;
         }
-        return userNum;
+        System.out.println("Number not valid...");
+        return getInteger(min, max); // recursion
     }
 
     public static long factorial (int userInput) {
