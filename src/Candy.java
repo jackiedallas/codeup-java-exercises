@@ -38,6 +38,6 @@ public class Candy {
         String userCandyName2 = scanner.nextLine();
 
         Candy userCandy2 = new Candy(userCandyName2);
-       userCandy2.candyReport();
+        userCandy2.candyReport();
     }
 }
