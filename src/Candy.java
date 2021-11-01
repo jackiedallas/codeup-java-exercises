@@ -5,15 +5,16 @@ public class Candy {
     public String size;
 
     public Candy (String candyName) {
-//        this.name = candyName;
-//        this.size = "undisclosed";
-
         this(candyName, "undisclosed");
     }
 
     public Candy (String candyName, String candySize) {
         this.name = candyName;
         this.size = candySize;
+    }
+
+    public void candyReport () {
+        System.out.printf("Ahh, a %s! I see that you got the %s size of it. Sounds Good! :)", this.name, this.size);
     }
 
 
@@ -29,6 +30,14 @@ public class Candy {
 
         Candy userCandy = new Candy(userCandyName, userCandySize);
 
-        System.out.printf("Ahhh, a %s! I see that you got the %s size of it. Sounds Good! :)", userCandyName, userCandySize);
+        userCandy.candyReport();
+        System.out.println();
+
+
+        System.out.print("What was the name of your favorite candy? ");
+        String userCandyName2 = scanner.nextLine();
+
+        Candy userCandy2 = new Candy(userCandyName2);
+       userCandy2.candyReport();
     }
 }
