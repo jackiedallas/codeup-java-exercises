@@ -1,3 +1,5 @@
+import util.Input;
+
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -9,6 +11,7 @@ public class MethodsExercises {
 //        division(50, 10);
 //        modulus(4, 2);
         System.out.println("getInteger(1, 10) = " + getInteger(1, 10));
+        factorial2();
 //        factorial(1, 10);
 //        System.out.print("Enter a number between 1 and 10: ");
 //        int userNumber = getInteger(1, 10);
@@ -64,6 +67,32 @@ public class MethodsExercises {
         }
         System.out.println("Number not valid...");
         return getInteger(min, max); // recursion
+    }
+
+    public static void factorial2() {
+        Scanner scanner = new Scanner(System.in);
+
+        int userInput;
+        String isContinue;
+        long factorial = 1;
+        String middle = "1";
+
+        do {
+
+            userInput = getInteger(1, 10);
+            for (int i = 1; i <= userInput; i++) {
+                if(i > 1) {
+                    middle += "x" + i;
+                }
+                factorial *= i;
+
+                System.out.printf("%2d! = %-45s = %d%n", i, middle, factorial);
+            }
+
+
+            System.out.print("Would you like to go again? (y/n) ");
+            isContinue = scanner.nextLine();
+        } while(isContinue.equalsIgnoreCase("y"));
     }
 
     public static long factorial (int userInput) {
