@@ -8,7 +8,7 @@ import static movies.MoviesArray.findAll;
 
 public class MoviesApplication {
 
-    private static Movie[] movieDB = findAll();
+    private static final Movie[] movieDB = findAll();
 
 
     public static Movie[] addMovie(Movie[] movieArray, Movie newMovie) {
@@ -74,14 +74,17 @@ public class MoviesApplication {
         String userMovieGenre = input.getString();
         System.out.println("userMovieGenre = " + userMovieGenre);
 
-        String[] userMovie = {userMovieName, userMovieGenre};
-        System.out.println("userMovie = " + Arrays.toString(userMovie));
+//        Movie[] userMovie = {String userMovieName, userMovieGenre};
+        Movie[] userMovie = new Movie[1];
+//        System.out.println("userMovie = " + Arrays.toString(userMovie));
+        userMovie[0] = new Movie(userMovieName, userMovieGenre);
 
-        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
-        newUserMovie.setName(userMovieName);
-        newUserMovie.setCategory(userMovieGenre);
+        addMovie(userMovie, Movie userMovie);
+//        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
+//        newUserMovie.setName(userMovieName);
+//        newUserMovie.setCategory(userMovieGenre);
 
-        return addMovie(Movie[] newUserMovie, Movie newMovie);
+
 //       Movie = addMovie(Movie[] userMovieArray, Movie userMovie);
 
 //        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
