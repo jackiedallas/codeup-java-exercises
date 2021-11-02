@@ -11,6 +11,13 @@ public class MoviesApplication {
     private static Movie[] movieDB = findAll();
 
 
+    public static Movie[] addMovie(Movie[] movieArray, Movie newMovie) {
+        Movie[] newMovies = Arrays.copyOf(movieArray, movieArray.length + 1);
+        newMovies[newMovies.length - 1] = newMovie;
+        return newMovies;
+    }
+
+
     public static void choiceOne() {
 
         for (Movie movie : movieDB) {
@@ -58,6 +65,35 @@ public class MoviesApplication {
         }
     }
 
+    public static void choiceSeven() {
+        Input input = new Input();
+        System.out.print("What's the name of the movie? ");
+        String userMovieName = input.getString();
+        System.out.println("userMovieName = " + userMovieName);
+        System.out.print("What's the genre of your the movie? ");
+        String userMovieGenre = input.getString();
+        System.out.println("userMovieGenre = " + userMovieGenre);
+
+        String[] userMovie = {userMovieName, userMovieGenre};
+        System.out.println("userMovie = " + Arrays.toString(userMovie));
+
+        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
+        newUserMovie.setName(userMovieName);
+        newUserMovie.setCategory(userMovieGenre);
+
+        return addMovie(Movie[] newUserMovie, Movie newMovie);
+//       Movie = addMovie(Movie[] userMovieArray, Movie userMovie);
+
+//        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
+
+
+//        addMovie(movieDB, newUserMovie);
+
+
+
+
+    }
+
     public static void main(String[] args) {
 
         boolean confirm;
@@ -70,7 +106,8 @@ public class MoviesApplication {
                     "3 - view all movies in the musical category \n" +
                     "4 - view all movies in the scifi category \n" +
                     "5 - view all movies in the horror category \n" +
-                    "6 - view all movies in the comedy category \n"
+                    "6 - view all movies in the comedy category \n" +
+                    "7 - add a movie \n"
             );
             System.out.print("What would you like to do? ");
             int userChoice = input.getInt();
@@ -87,6 +124,8 @@ public class MoviesApplication {
                 choiceFive();
             } else if (userChoice == 6) {
                 choiceSix();
+            } else if (userChoice == 7) {
+                choiceSeven();
             }
 
 
