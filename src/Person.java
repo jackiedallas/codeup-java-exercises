@@ -5,10 +5,23 @@ public class Person {
 
     // create a private name property
     private String name;
+    protected int age;
+
+    // public string name for inheritance and polymorphismn
+//    public String name;
+
     // Constructor
+//    public Person(){};
+
     public Person (String personName) {
         this.name = personName;
     }
+
+    public Person(String personName, int age) {
+        this.name = personName;
+        this.age = age;
+    }
+
     // Methods
     public String getName() {
         return name;
@@ -19,7 +32,7 @@ public class Person {
     }
 
     public void sayHello() {
-        System.out.println("Hello");
+        System.out.println("Hello " + name);
     }
     // main
     public static void main(String[] args) {

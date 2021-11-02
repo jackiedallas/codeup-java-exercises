@@ -79,7 +79,7 @@ public class MoviesApplication {
 //        System.out.println("userMovie = " + Arrays.toString(userMovie));
         userMovie[0] = new Movie(userMovieName, userMovieGenre);
 
-        addMovie(userMovie, Movie userMovie);
+//        addMovie(userMovie, Movie userMovie);
 //        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
 //        newUserMovie.setName(userMovieName);
 //        newUserMovie.setCategory(userMovieGenre);
