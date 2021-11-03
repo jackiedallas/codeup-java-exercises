@@ -1,5 +1,8 @@
 package CardGames;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class CardsArray {
     public static Card[] getAllCards() {
         return new Card[]{
@@ -59,5 +62,17 @@ public class CardsArray {
                 new Card("Spade", "Queen", 12),
                 new Card("Spade", "King", 13),
         };
+    }
+
+    public static Card[] shuffleCards(Card[] cards) {
+        Random shuffle = ThreadLocalRandom.current();
+        for (int i = cards.length-1; i > 0 ; i--) {
+            int index = shuffle.nextInt(i + 1);
+
+            Card card = cards[index];
+            cards[index] = cards[i];
+            cards[i] = card;
+        }
+        return cards;
     }
 }
