@@ -17,12 +17,12 @@ public class Rectangle extends Quadrilateral{
 
     @Override
     public double getPerimeter() {
-        return 0;
+        return ((2 * length) + (2 * width));
     }
 
     @Override
     public double getArea() {
-        return 0;
+        return length * width;
     }
 
 //    @Override
