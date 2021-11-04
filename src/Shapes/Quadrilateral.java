@@ -4,14 +4,27 @@ package Shapes;
 
     abstract class Quadrilateral extends Shape {
 
-        protected int length;
-        protected int width;
+        protected double length;
+        protected double width;
 
-        public Quadrilateral(int length, int width) {
-            this.length = length;
-            this.width = width;
+        public Quadrilateral(double length, double width) {
+            this.width = length;
+            this.length = width;
         }
 
+        public abstract void setWidth(double width);
+
+
+
+        public abstract void setLength(double length);
+
+        public double getLength() {
+            return length;
+        }
+
+        public double getWidth() {
+            return width;
+        }
 
 
 }
