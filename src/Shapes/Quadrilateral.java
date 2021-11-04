@@ -8,22 +8,18 @@ package Shapes;
         protected double width;
 
 
-
+        // constructor
         public Quadrilateral(double length, double width) {
             this.width = length;
             this.length = width;
         }
 
-        public Quadrilateral(double singleSide){
-            this.length = singleSide;
-            this.width = singleSide;
-        }
-
-
-
+        // setters
         public abstract void setWidth(double width);
         public abstract void setLength(double length);
 
+
+        // getters
         public double getLength() {
             return this.length;
         }
