@@ -1,3 +1,3 @@
 package Shapes;
 
-    abstract class Shape implements Measurable {}
+    public abstract class Shape implements Measurable {}

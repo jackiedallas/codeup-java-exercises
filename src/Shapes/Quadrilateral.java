@@ -2,7 +2,7 @@ package Shapes;
 
 
 
-    abstract class Quadrilateral extends Shape {
+    public abstract class Quadrilateral extends Shape {
 
         protected double length;
         protected double width;
