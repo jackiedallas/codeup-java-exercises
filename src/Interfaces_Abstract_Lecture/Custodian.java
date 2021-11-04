@@ -7,6 +7,23 @@ public class Custodian extends Employee{
     }
 
     public String work() {
-        return "Maintaining building, cleaning up messes, and restocking.";
+        return "maintaining building, cleaning up messes, and restocking.";
     }
+
+    @Override
+    public String morningMeeting() {
+        return "Custodians have a direct report to the head of the maintenance department. They schedule meetings as necessary.";
+    }
+
+    @Override
+    public String lunchTime() {
+        return "12:00 - 1:00";
+    }
+
+    @Override
+    public int dailyPay() {
+        return 100;
+    }
+
+
 }

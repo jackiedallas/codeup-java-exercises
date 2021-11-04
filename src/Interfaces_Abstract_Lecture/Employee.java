@@ -1,6 +1,6 @@
 package Interfaces_Abstract_Lecture;
 
-abstract class Employee {
+abstract class Employee implements DailyWork {
     protected String name;
     protected String department;
 
@@ -17,7 +17,7 @@ abstract class Employee {
         return department;
     }
 
-    public abstract String work();
+//    public abstract String work();
 
 //    public static void main(String[] args) {
 //        Employee jackie = new Employee("jackie", "web dev")
