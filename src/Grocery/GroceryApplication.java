@@ -25,7 +25,7 @@ public class GroceryApplication {
 
     public static void main(String[] args) {
         HashMap<String, Integer> Bakery = new HashMap<>();
-        HashMap<String, Integer>
+        HashMap<String, Integer> Household = new HashMap<>();
         HashMap<String, Integer> Dairy = new HashMap<>();
         HashMap<String, Integer> Meat = new HashMap<>();
         HashMap<String, Integer> Frozen = new HashMap<>();
@@ -33,7 +33,11 @@ public class GroceryApplication {
         addItem(Meat, "Steak", 5);
         addItem(Meat, "Brisket", 1);
 
+        addItem(Frozen, "Toaster Strudels", 8);
+
         System.out.println(Meat);
+        System.out.println(Frozen);
+        getItems(Frozen);
 
         getItems(Meat);
 
