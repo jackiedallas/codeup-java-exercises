@@ -65,25 +65,16 @@ public class GradesApplication {
             System.out.print("Which student would you like more info on? ");
             String userInput = scanner.nextLine();
 
-            switch (userInput){
-                case "tokenCoding":
-                    System.out.printf("Name: %s - Github Username: tokenCoding\n" +
-                            "Current Average: %s", jackie.getName(), jackiesAverage);
-                    break;
-                case "iansLame":
-                    System.out.printf("Name: %s - Github Username: iansLame\n" +
-                            "Current Average: %s", ian.getName(), iansAverage);
-                    break;
-                case "minaGoat":
-                    System.out.printf("Name: %s - Github Username: minaGoat\n" +
-                            "Current Average: %s", adamina.getName(), adaminasAverage);
-                    break;
-                case "covidFree":
-                    System.out.printf("Name: %s - Github Username: covidFree\n" +
-                            "Current Average: %s", nick.getName(), nicksAverage);
-                    break;
-                default:
-                    System.out.println("That student doesn't exist.");
+            switch (userInput) {
+                case "tokenCoding" -> System.out.printf("Name: %s - Github Username: tokenCoding\n" +
+                        "Current Average: %s", jackie.getName(), jackiesAverage);
+                case "iansLame" -> System.out.printf("Name: %s - Github Username: iansLame\n" +
+                        "Current Average: %s", ian.getName(), iansAverage);
+                case "minaGoat" -> System.out.printf("Name: %s - Github Username: minaGoat\n" +
+                        "Current Average: %s", adamina.getName(), adaminasAverage);
+                case "covidFree" -> System.out.printf("Name: %s - Github Username: covidFree\n" +
+                        "Current Average: %s", nick.getName(), nicksAverage);
+                default -> System.out.println("That student doesn't exist.");
             }
 
             System.out.print("\nWould you like to see another student? [Y/N] ");
@@ -91,6 +82,8 @@ public class GradesApplication {
             confirm = userContinue.equalsIgnoreCase("y");
         } while(confirm);
 
+
+        System.out.println("Thanks for visiting Cream of the Crop Academy, have a blessed and prosperous day!");
     }
 
 }
