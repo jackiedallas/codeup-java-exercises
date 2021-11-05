@@ -15,7 +15,7 @@ public class GroceryApplication {
     }
 
 
-    // print out items
+    // print out items, stackoverflow link kenneth sent
     public static void getItems(HashMap<String, Integer> category) {
         for (Map.Entry<String, Integer> item: category.entrySet()){
             System.out.println(item);
@@ -24,6 +24,8 @@ public class GroceryApplication {
 
 
     public static void main(String[] args) {
+        HashMap<String, Integer> Bakery = new HashMap<>();
+        HashMap<String, Integer>
         HashMap<String, Integer> Dairy = new HashMap<>();
         HashMap<String, Integer> Meat = new HashMap<>();
         HashMap<String, Integer> Frozen = new HashMap<>();
