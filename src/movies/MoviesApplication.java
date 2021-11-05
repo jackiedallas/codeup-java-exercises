@@ -74,10 +74,15 @@ public class MoviesApplication {
         String userMovieGenre = input.getString();
         System.out.println("userMovieGenre = " + userMovieGenre);
 
+        Movie[] userMovie = new Movie[2];
+        Arrays.fill(userMovie, userMovieName);
+        Arrays.fill(userMovie, userMovieGenre);
+
+
 //        Movie[] userMovie = {String userMovieName, userMovieGenre};
-        Movie[] userMovie = new Movie[1];
+//        Movie[] userMovie = new Movie[1];
 //        System.out.println("userMovie = " + Arrays.toString(userMovie));
-        userMovie[0] = new Movie(userMovieName, userMovieGenre);
+//        userMovie[0] = new Movie(userMovieName, userMovieGenre);
 
 //        addMovie(userMovie, Movie userMovie);
 //        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
