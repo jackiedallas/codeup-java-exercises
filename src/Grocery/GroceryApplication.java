@@ -14,6 +14,8 @@ public class GroceryApplication {
         category.put(item, amount);
     }
 
+
+    // print out items
     public static void getItems(HashMap<String, Integer> category) {
         for (Map.Entry<String, Integer> item: category.entrySet()){
             System.out.println(item);
