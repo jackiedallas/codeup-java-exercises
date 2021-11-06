@@ -5,6 +5,7 @@ import util.Input;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class GroceryApplication {
 
@@ -19,7 +20,8 @@ public class GroceryApplication {
 
     // print out items, stackoverflow link kenneth sent
     public static void getItems(HashMap<String, Integer> category) {
-        for (Map.Entry<String, Integer> item: category.entrySet()){
+        TreeMap<String, Integer> sortItems = new TreeMap<>(category);
+        for (Map.Entry<String, Integer> item: sortItems.entrySet()){
             System.out.println(item);
         }
     }
@@ -74,23 +76,12 @@ public class GroceryApplication {
 
                     // switch case for user choice
                     switch (userChoice) {
-                        case 1:
-                            addItem(Bakery, userItemName, userItemAmount);
-                            break;
-                        case 2:
-                            addItem(Household, userItemName, userItemAmount);
-                            break;
-                        case 3:
-                            addItem(Dairy, userItemName, userItemAmount);
-                            break;
-                        case 4:
-                            addItem(Meat, userItemName, userItemAmount);
-                            break;
-                        case 5:
-                            addItem(Frozen, userItemName, userItemAmount);
-                            break;
-                        default:
-                            System.out.println("Not a valid choice.");
+                        case 1 -> addItem(Bakery, userItemName, userItemAmount);
+                        case 2 -> addItem(Household, userItemName, userItemAmount);
+                        case 3 -> addItem(Dairy, userItemName, userItemAmount);
+                        case 4 -> addItem(Meat, userItemName, userItemAmount);
+                        case 5 -> addItem(Frozen, userItemName, userItemAmount);
+                        default -> System.out.println("Not a valid choice.");
                     }
 
                     // clearing scanner
@@ -107,6 +98,8 @@ public class GroceryApplication {
             } while(confirm);
         }
 
+
+        System.out.println("Here is a summary of all of your list items: ");
 
         getItems(Bakery);
         getItems(Household);
