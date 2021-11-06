@@ -34,15 +34,15 @@ public class GroceryApplication {
         HashMap<String, Integer> Meat = new HashMap<>();
         HashMap<String, Integer> Frozen = new HashMap<>();
 
-        addItem(Meat, "Steak", 5);
-        addItem(Meat, "Brisket", 1);
-
-        addItem(Frozen, "Toaster Strudels", 8);
-
-        System.out.println(Meat);
-        System.out.println(Frozen);
-        getItems(Frozen);
-        getItems(Meat);
+//        addItem(Meat, "Steak", 5);
+//        addItem(Meat, "Brisket", 1);
+//
+//        addItem(Frozen, "Toaster Strudels", 8);
+//
+//        System.out.println(Meat);
+//        System.out.println(Frozen);
+//        getItems(Frozen);
+//        getItems(Meat);
 
         System.out.print("Would you like to create a grocery list? [Y/N] ");
         boolean userInput = input.yesNo();
@@ -51,7 +51,6 @@ public class GroceryApplication {
         if (userInput) {
             boolean confirm;
             do {
-
                 boolean addMoreGroceries;
                 do{
                     System.out.println("""
@@ -65,16 +64,15 @@ public class GroceryApplication {
 
                     int userChoice = input.getInt();
 
+                    // clearing scanner
                     input.getString();
 
                     System.out.print("Enter the name of the item: ");
                     String userItemName = input.getString();
-
-
-
                     System.out.print("Enter the amount of the item you want: ");
                     int userItemAmount = input.getInt();
 
+                    // switch case for user choice
                     switch (userChoice) {
                         case 1:
                             addItem(Bakery, userItemName, userItemAmount);
@@ -82,21 +80,26 @@ public class GroceryApplication {
                         case 2:
                             addItem(Household, userItemName, userItemAmount);
                             break;
-
-
+                        case 3:
+                            addItem(Dairy, userItemName, userItemAmount);
+                            break;
+                        case 4:
+                            addItem(Meat, userItemName, userItemAmount);
+                            break;
+                        case 5:
+                            addItem(Frozen, userItemName, userItemAmount);
+                            break;
                         default:
-                            System.out.println("good bye");
+                            System.out.println("Not a valid choice.");
                     }
 
+                    // clearing scanner
                     input.getString();
 
                     System.out.print("Do you want to add more groceries? [Y/N] ");
                     String userAddMore = input.getString();
                     addMoreGroceries = userAddMore.equalsIgnoreCase("y");
                 } while(addMoreGroceries);
-
-
-
 
                 System.out.print("Do you want to continue? [Y/N] ");
                 String userCont = input.getString();
@@ -105,37 +108,12 @@ public class GroceryApplication {
         }
 
 
-
-
-//        Input input = new Input();
-
-//        System.out.println();
-//
-//        HashMap<String, HashMap<String, Integer>> groceries = new HashMap<>();
-//
-//
-//        HashMap<String, Integer> listItem = new HashMap<>();
-//
-//        listItem.put("Milk", 3);
-//
-//        groceries.put("Dairy", listItem);
-//
-//        listItem.put("Sour cream", 1);
-//
-//        groceries.put("Dairy", listItem);
-//        System.out.println("groceries.get(\"Dairy\") = " + groceries.get("Dairy"));
-//
-//        listItem.clear();
-//        listItem.put("steak", 2);
-//        groceries.put("Meat", listItem);
-//        System.out.println("groceries.get(\"Meat\") = " + groceries.get("Meat"));
-//        System.out.println("groceries = " + groceries);
-//
-//        System.out.println("groceries.get(\"Dairy\") = " + groceries.get("Dairy"));
-
-
         getItems(Bakery);
+        getItems(Household);
+        getItems(Dairy);
         getItems(Meat);
+        getItems(Frozen);
+
 
 
     }
