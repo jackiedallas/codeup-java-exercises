@@ -8,7 +8,7 @@ import static movies.MoviesArray.findAll;
 
 public class MoviesApplication {
 
-    private static final Movie[] movieDB = findAll();
+    private static Movie[] movieDB = findAll();
 
 
     public static Movie[] addMovie(Movie[] movieArray, Movie newMovie) {
@@ -16,7 +16,6 @@ public class MoviesApplication {
         newMovies[newMovies.length - 1] = newMovie;
         return newMovies;
     }
-
 
     public static void choiceOne() {
 
@@ -74,32 +73,11 @@ public class MoviesApplication {
         String userMovieGenre = input.getString();
         System.out.println("userMovieGenre = " + userMovieGenre);
 
-        Movie[] userMovie = new Movie[2];
-        Arrays.fill(userMovie, userMovieName);
-        Arrays.fill(userMovie, userMovieGenre);
-
-
-//        Movie[] userMovie = {String userMovieName, userMovieGenre};
-//        Movie[] userMovie = new Movie[1];
-//        System.out.println("userMovie = " + Arrays.toString(userMovie));
-//        userMovie[0] = new Movie(userMovieName, userMovieGenre);
-
-//        addMovie(userMovie, Movie userMovie);
-//        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
-//        newUserMovie.setName(userMovieName);
-//        newUserMovie.setCategory(userMovieGenre);
-
-
-//       Movie = addMovie(Movie[] userMovieArray, Movie userMovie);
-
-//        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
-
-
-//        addMovie(movieDB, newUserMovie);
-
-
-
-
+        Movie newUserMovie = new Movie(userMovieName, userMovieGenre);
+        movieDB = addMovie(movieDB, newUserMovie);
+        for (Movie movie : movieDB) {
+            System.out.printf("%s -- %s\n", movie.getName(), movie.getCategory());
+        }
     }
 
     public static void main(String[] args) {
@@ -136,16 +114,11 @@ public class MoviesApplication {
                 choiceSeven();
             }
 
-
             input.getString();
             System.out.print("Do you want to continue? [Y/N] ");
             String userConfirm = input.getString();
             confirm = userConfirm.equalsIgnoreCase("y");
         } while(confirm);
-
-
-
-
 
     }
 }
