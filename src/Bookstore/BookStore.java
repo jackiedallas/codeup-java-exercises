@@ -1,8 +1,14 @@
 package Bookstore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class BookStore {
+
+    public void buyRandomBook() {
+
+    }
+
     public static void main(String[] args) {
 
         // created authors
@@ -11,11 +17,19 @@ public class BookStore {
         Author jackiedallas = new Author("Jackie Dallas");
 
         // create books
+        ArrayList<Book> bookInventory = new ArrayList<>();
+
         Book harryPotter1 = new Book(jkrowling.name, "Harry Potter and the Sorcerer's Stone", 6.98);
         Book codeToGreatness = new Book(jackiedallas.name, "Code to Greatness", 9.99);
         Book itNovel = new Book(stephenking.name, "It: A Novel", 15.98);
         Book christmasPig = new Book(jkrowling.name, "The Christmas Pig", 14.99);
         Book bSummers = new Book(stephenking.name, "Billy Summers", 17.98);
+
+        bookInventory.add(harryPotter1);
+        bookInventory.add(itNovel);
+        bookInventory.add(codeToGreatness);
+        bookInventory.add(christmasPig);
+        bookInventory.add(bSummers);
 
         // array list for customers
         ArrayList<Customer> customers = new ArrayList<>();
@@ -29,6 +43,10 @@ public class BookStore {
         Customer customer6 = new Customer("Zack");
         Customer customer7 = new Customer("Kayla");
         Customer customer8 = new Customer("Nadia");
+
+//        HashMap<String, HashMap<String, HashMap<String, Double>>> customerOne = new HashMap<>();
+//        customerOne.put(customer1.name, codeToGreatness.author, codeToGreatness.title, codeToGreatness.price);
+//        System.out.println(customerOne);
 
         // add customers to array list
         customers.add(customer1);
