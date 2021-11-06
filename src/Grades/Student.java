@@ -30,6 +30,25 @@ public class Student {
         }
         return Math.round(sumOfGrades/grades.size());
     }
+    // returns sum of all grades
+    public double getSumOfGrades() {
+        double sumOfGrades = 0;
+        for (int i : grades) {
+            sumOfGrades += i;
+        }
+        return sumOfGrades;
+    }
+
+    public double getClassAverage(int classSize, double sumOfGrades) {
+        return sumOfGrades / classSize;
+    }
+
+
+
+
+
+
+
 
     public static void main(String[] args) {
         Student jackie = new Student("Jackie", new ArrayList<>());
