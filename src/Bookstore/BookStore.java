@@ -6,10 +6,6 @@ import java.util.Random;
 
 public class BookStore {
 
-    public void buyRandomBook() {
-
-    }
-
     public static void main(String[] args) {
 
         // created authors
@@ -45,10 +41,6 @@ public class BookStore {
         Customer customer7 = new Customer("Kayla");
         Customer customer8 = new Customer("Nadia");
 
-//        HashMap<String, HashMap<String, HashMap<String, Double>>> customerOne = new HashMap<>();
-//        customerOne.put(customer1.name, codeToGreatness.author, codeToGreatness.title, codeToGreatness.price);
-//        System.out.println(customerOne);
-
         // add customers to array list
         customers.add(customer1);
         customers.add(customer2);
@@ -64,9 +56,6 @@ public class BookStore {
             int randomBookIndex = rand.nextInt(bookInventory.size());
             Book randomBook = bookInventory.get(randomBookIndex);
             System.out.printf("%s bought \"%s\", by %s for $%s.\n", customer.name, randomBook.title, randomBook.author, randomBook.price);
-
         }
-
-
     }
 }
