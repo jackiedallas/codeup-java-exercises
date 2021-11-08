@@ -70,4 +70,8 @@ public class Input {
             return getDouble(prompt);
         }
     }
+
+//    public int getBinary(String binaryNum) {
+//        return Integer.parseInt(binaryNum, 2);
+//    }
 }

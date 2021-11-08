@@ -23,10 +23,15 @@ public class InputTest {
 //        System.out.println("input.getDouble() = " + input.getDouble());
 
 
-        int testInput = input.getInt("Enter an integer: ");
-        System.out.println("testInput = " + testInput);
+//        int testInput = input.getInt("Enter an integer: ");
+//        System.out.println("testInput = " + testInput);
+//
+//        double testInput2 = input.getDouble("enter a double value: ");
+//        System.out.println("testInput2 = " + testInput2);
 
-        double testInput2 = input.getDouble("enter a double value: ");
-        System.out.println("testInput2 = " + testInput2);
+        System.out.print("Enter a binary number: ");
+        String binaryStr = input.getString();
+        int binaryNum = input.getBinary(binaryStr);
+        System.out.println("binaryNum = " + binaryNum);
     }
 }
