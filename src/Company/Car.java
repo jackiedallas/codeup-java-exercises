@@ -14,6 +14,6 @@ public class Car extends Product{
 
     @Override
     public String getName() {
-        return "This car is a " + year + " " + make + " " + model + "!";
+        return year + " " + make + " " + model;
     }
 }

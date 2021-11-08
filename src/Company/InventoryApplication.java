@@ -56,7 +56,8 @@ public class InventoryApplication {
 
     public static void showProducts(ArrayList<Product> products) {
         for (Product product : products) {
-            System.out.printf("Product is: %s", product.getName());
+            System.out.printf("Product: %s", product.getName());
+            System.out.println();
             System.out.printf("Company profit is: $%s", product.getProfit());
         }
     }
@@ -88,6 +89,7 @@ public class InventoryApplication {
 
         System.out.print("What will the cost of production be: ");
         double cost = input.getDouble();
+        input.getString();
 
         System.out.print("What is the make of the car: ");
         String make = input.getString();
