@@ -2,6 +2,8 @@ package Grades;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class StudentsDatabase {
     public static HashMap<String, Student> getAll() {
@@ -49,6 +51,9 @@ public class StudentsDatabase {
         students.put("minaGoat", adamina);
         students.put("covidFree", nick);
 
+
         return students;
+
     }
+
 }

@@ -24,7 +24,11 @@ public class GradesApplication {
 
         switch (userChoice) {
             case 1 -> specificStudent();
-//            case 2 -> seeAllGrades();
+//            case 2 -> {
+//                for (int i = 0; i < students.size(); i++) {
+//
+//                }
+//            }
             case 3 -> closingStatement();
             default -> {
                 System.out.println("Invalid response");
