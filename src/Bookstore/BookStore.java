@@ -2,6 +2,7 @@ package Bookstore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class BookStore {
 
@@ -58,7 +59,13 @@ public class BookStore {
         customers.add(customer7);
         customers.add(customer8);
 
-//        System.out.println("customer1.name = " + customer1.name);
+        Random rand = new Random();
+        for (Customer customer : customers) {
+            int randomBookIndex = rand.nextInt(bookInventory.size());
+            Book randomBook = bookInventory.get(randomBookIndex);
+            System.out.printf("%s bought \"%s\", by %s for $%s.\n", customer.name, randomBook.title, randomBook.author, randomBook.price);
+
+        }
 
 
     }
