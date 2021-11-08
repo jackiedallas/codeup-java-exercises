@@ -6,10 +6,55 @@ import java.util.ArrayList;
 
 public class InventoryApplication {
 
-    ArrayList<Product> products = new ArrayList<>();
 
 
-    public void showProducts() {
+    public static void main(String[] args) {
+        ArrayList<Product> products = new ArrayList<>();
+
+
+        Input input = new Input();
+
+        System.out.println("Welcome to JD's Online Boutique!");
+        System.out.println("Please add four new products.");
+        System.out.println("""
+                Please select a category for the product you'd like to add:\s
+                1. Car
+                2. Shoe
+                3. Subscription
+                4. Other""");
+
+        int userChoice = input.getInt();
+
+        switch (userChoice) {
+            case 1 -> {
+                Car userCar;
+                userCar = userAddCar();
+                products.add(userCar);
+            }
+            case 2 -> {
+                Shoe userShoe;
+                userShoe = userShoe();
+                products.add(userShoe);
+            }
+            case 3 -> {
+                Subscription userSubscription;
+                userSubscription = userSubscription();
+                products.add(userSubscription);
+            }
+            case 4 -> {
+                Product userProduct;
+                userProduct = makeUserProduct();
+                products.add(userProduct);
+            }
+            default -> System.out.println("Invalid option");
+        }
+
+        showProducts(products);
+    }
+
+
+
+    public static void showProducts(ArrayList<Product> products) {
         for (Product product : products) {
             System.out.printf("Product is: %s", product.getName());
             System.out.printf("Company profit is: $%s", product.getProfit());
@@ -33,7 +78,7 @@ public class InventoryApplication {
         return new Product(name, price, cost, type);
     }
 
-    public Car userAddCar() {
+    public static Car userAddCar() {
         Input input = new Input();
         System.out.print("What is the name of the car: ");
         String name = input.getString();
@@ -56,7 +101,7 @@ public class InventoryApplication {
         return new Car(name, price, cost, make, model, year);
     }
 
-    public Subscription userSubscription() {
+    public static Subscription userSubscription() {
         Input input = new Input();
         System.out.print("What is the name of the subscription: ");
         String name = input.getString();
@@ -73,7 +118,7 @@ public class InventoryApplication {
         return new Subscription(name, price, cost, numberOfMonths);
     }
 
-    public Shoe userShoe() {
+    public static Shoe userShoe() {
         Input input = new Input();
         System.out.print("What is the name of the shoe: ");
         String name = input.getString();
