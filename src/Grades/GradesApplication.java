@@ -15,15 +15,17 @@ public class GradesApplication {
         System.out.println("|tokenCoding| |iansLame| |minaGoat| |covidFree|");
         System.out.println();
         System.out.println("""
-                        Would you like to: \s\040
+                        Would you like to do: \s\040
                         1. See a specific student\040
-                        2. View all grades""");
+                        2. View all grades
+                        3. Leave""");
 
         int userChoice = scanner.nextInt();
 
         switch (userChoice) {
             case 1 -> specificStudent();
 //            case 2 -> seeAllGrades();
+            case 3 -> closingStatement();
             default -> {
                 System.out.println("Invalid response");
                 openingStatement();
@@ -110,6 +112,7 @@ public class GradesApplication {
             String userContinue = scanner.nextLine();
             confirm = userContinue.equalsIgnoreCase("y");
         } while(confirm);
+        closingStatement();
 
     }
 
@@ -125,7 +128,6 @@ public class GradesApplication {
 
     public static void main(String[] args) {
         openingStatement();
-        closingStatement();
     }
 
 }
