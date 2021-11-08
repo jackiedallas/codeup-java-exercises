@@ -12,6 +12,6 @@ public class Shoe extends Product{
 
     @Override
     public String getName() {
-        return style + " " + name;
+        return "Size " + size + " " + name;
     }
 }

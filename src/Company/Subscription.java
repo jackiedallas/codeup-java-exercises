@@ -25,6 +25,6 @@ public class Subscription extends Product{
 
     @Override
     public String getName() {
-        return "A " + numberOfMonths + " subscription to " + name + "magazine.";
+        return numberOfMonths + " month subscription to " + name + " magazine";
     }
 }
