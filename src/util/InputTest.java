@@ -19,7 +19,14 @@ public class InputTest {
 
 //        System.out.println("input.getInt(1, 10) = " + input.getInt(1, 10));
 //        System.out.println("input.getDouble(1.00, 1.50) = " + input.getDouble(1.00, 1.50));
-        input.getDouble(1.00, 5.00);
-        System.out.println("input.getDouble() = " + input.getDouble());
+//        input.getDouble(1.00, 5.00);
+//        System.out.println("input.getDouble() = " + input.getDouble());
+
+
+        int testInput = input.getInt("Enter an integer: ");
+        System.out.println("testInput = " + testInput);
+
+        double testInput2 = input.getDouble("enter a double value: ");
+        System.out.println("testInput2 = " + testInput2);
     }
 }

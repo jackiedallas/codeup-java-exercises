@@ -21,10 +21,7 @@ public class Input {
             return true;
         } else if (scanner.hasNext("Y")) {
             return true;
-        } else if (scanner.nextLine().equalsIgnoreCase("yes")) {
-            return true;
-        }
-        return false;
+        } else return scanner.nextLine().equalsIgnoreCase("yes");
     }
 
     public int getInt(int min, int max) {
@@ -41,6 +38,16 @@ public class Input {
         return scanner.nextInt();
     }
 
+    public int getInt(String prompt) {
+        try {
+            System.out.println(prompt);
+            return Integer.parseInt(getString());
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid input");
+            return getInt(prompt);
+        }
+    }
+
     public double getDouble(double min, double max) {
         double userNum;
         do {
@@ -52,5 +59,15 @@ public class Input {
 
     public double getDouble() {
         return scanner.nextDouble();
+    }
+
+    public double getDouble(String prompt) {
+        try {
+            System.out.println(prompt);
+            return Double.parseDouble(getString());
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid input");
+            return getDouble(prompt);
+        }
     }
 }
