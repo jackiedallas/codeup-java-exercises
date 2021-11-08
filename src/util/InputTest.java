@@ -29,9 +29,12 @@ public class InputTest {
 //        double testInput2 = input.getDouble("enter a double value: ");
 //        System.out.println("testInput2 = " + testInput2);
 
-        System.out.print("Enter a binary number: ");
-        String binaryStr = input.getString();
-        int binaryNum = input.getBinary(binaryStr);
-        System.out.println("binaryNum = " + binaryNum);
+//        System.out.print("Enter a binary number: ");
+//        String binaryStr = input.getString();
+//        int binaryNum = input.getBinary(binaryStr);
+//        System.out.println("binaryNum = " + binaryNum);
+
+//        int testInput3 = input.getBinary("Enter a binary value:");
+//        System.out.println("testInput3 = " + testInput3);
     }
 }

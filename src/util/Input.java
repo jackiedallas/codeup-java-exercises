@@ -74,4 +74,14 @@ public class Input {
 //    public int getBinary(String binaryNum) {
 //        return Integer.parseInt(binaryNum, 2);
 //    }
+
+    public int getBinary(String prompt) {
+        try {
+            System.out.println(prompt);
+            return Integer.parseInt(getString(), 2);
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid input");
+            return getBinary(prompt);
+        }
+    }
 }
