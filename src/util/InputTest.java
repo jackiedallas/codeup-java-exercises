@@ -36,5 +36,8 @@ public class InputTest {
 
 //        int testInput3 = input.getBinary("Enter a binary value:");
 //        System.out.println("testInput3 = " + testInput3);
+
+        int testInput4 = input.getHex("Enter a hex value: ");
+        System.out.println("testInput4 = " + testInput4);
     }
 }

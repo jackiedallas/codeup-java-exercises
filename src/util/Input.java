@@ -84,4 +84,14 @@ public class Input {
             return getBinary(prompt);
         }
     }
+
+    public int getHex(String prompt) {
+        try {
+            System.out.println(prompt);
+            return Integer.parseInt(getString(), 16);
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid input");
+            return getHex(prompt);
+        }
+    }
 }
