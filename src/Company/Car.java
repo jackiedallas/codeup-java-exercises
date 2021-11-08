@@ -1,7 +1,19 @@
 package Company;
 
 public class Car extends Product{
-    public Car(String name, double price) {
-        super(name, price);
+    protected String make;
+    protected String model;
+    protected int year;
+
+    public Car(String name, double price, double cost, String make, String model, int year) {
+        super(name, price, cost);
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    @Override
+    public String getName() {
+        return "This car is a " + year + " " + make + " " + model + "!";
     }
 }

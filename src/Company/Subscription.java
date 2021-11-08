@@ -1,7 +1,30 @@
 package Company;
 
 public class Subscription extends Product{
-    public Subscription(String name, double price) {
-        super(name, price);
+    public int numberOfMonths;
+    protected double profitPerPeriod;
+
+    public Subscription(String name, double price, double cost, int numberOfMonths) {
+        super(name, price, cost);
+        this.numberOfMonths = numberOfMonths;
+        getProfitPerPeriod();
+        type = "Subscription";
+    }
+
+    public int getNumberOfMonths(){
+        return numberOfMonths;
+    }
+
+    public void setNumberOfMonths(int numberOfMonths) {
+        this.numberOfMonths = numberOfMonths;
+    }
+
+    public double getProfitPerPeriod() {
+        return numberOfMonths * price;
+    }
+
+    @Override
+    public String getName() {
+        return "A " + numberOfMonths + " subscription to " + name + "magazine.";
     }
 }
