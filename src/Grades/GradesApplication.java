@@ -1,5 +1,7 @@
 package Grades;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.util.*;
 
 public class GradesApplication {
@@ -64,7 +66,8 @@ public class GradesApplication {
                         1. See a specific student\040
                         2. View all grades
                         3. View class average
-                        4. Leave""");
+                        4. Print CSV Report
+                        5. Leave""");
 
         int userChoice = scanner.nextInt();
 
@@ -76,7 +79,18 @@ public class GradesApplication {
                 System.out.println("The class average is " + classAverage);
                 openingStatement();
             }
-            case 4 -> closingStatement();
+            case 4 -> {
+                System.out.println("CSV REPORT");
+                System.out.println();
+                System.out.println(jackie.getName() + ", tokenCoding, Average: " + jackiesAverage);
+                System.out.println(ian.getName() + ", iansLame, Average: " + iansAverage);
+                System.out.println(adamina.getName() + ", minaGoat, Average: " + adaminasAverage);
+                System.out.println(nick.getName() + ", covidFree, Average: " + nicksAverage);
+                System.out.println();
+
+                openingStatement();
+            }
+            case 5 -> closingStatement();
             default -> {
                 System.out.println("Invalid response");
                 openingStatement();
