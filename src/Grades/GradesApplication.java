@@ -3,6 +3,7 @@ package Grades;
 import java.util.*;
 
 public class GradesApplication {
+
     public static void openingStatement() {
 
 
@@ -24,11 +25,7 @@ public class GradesApplication {
 
         switch (userChoice) {
             case 1 -> specificStudent();
-//            case 2 -> {
-//                for (int i = 0; i < students.size(); i++) {
-//
-//                }
-//            }
+            case 2 -> seeAllGrades();
             case 3 -> closingStatement();
             default -> {
                 System.out.println("Invalid response");
@@ -51,10 +48,10 @@ public class GradesApplication {
             HashMap<String, Student> students = new HashMap<>();
 
             // creating students
-            Student jackie = new Student("Jackie", new ArrayList<>());
-            Student ian = new Student("Ian", new ArrayList<>());
-            Student adamina = new Student("Adamina", new ArrayList<>());
-            Student nick = new Student("Nick", new ArrayList<>());
+            Student jackie = new Student("Jackie");
+            Student ian = new Student("Ian");
+            Student adamina = new Student("Adamina");
+            Student nick = new Student("Nick");
 
             // adding grades
             jackie.addGrade(95);
@@ -63,6 +60,8 @@ public class GradesApplication {
             jackie.addGrade(65);
             double jackiesAverage = jackie.getGradeAverage();
             double jackieSumOfGrades = jackie.getSumOfGrades();
+
+
 
             ian.addGrade(100);
             ian.addGrade(75);
@@ -93,6 +92,7 @@ public class GradesApplication {
 
 
 
+
             System.out.print("Which student would you like to see? ");
             String userInput = scanner.nextLine();
 
@@ -120,6 +120,61 @@ public class GradesApplication {
 
     }
 
+    public static void seeAllGrades() {
+        // creating hashmap
+        HashMap<String, Student> students = new HashMap<>();
+
+        // creating students
+        Student jackie = new Student("Jackie");
+        Student ian = new Student("Ian");
+        Student adamina = new Student("Adamina");
+        Student nick = new Student("Nick");
+
+        // adding grades
+        jackie.addGrade(95);
+        jackie.addGrade(85);
+        jackie.addGrade(75);
+        jackie.addGrade(65);
+        double jackiesAverage = jackie.getGradeAverage();
+        double jackieSumOfGrades = jackie.getSumOfGrades();
+
+
+
+        ian.addGrade(100);
+        ian.addGrade(75);
+        ian.addGrade(85);
+        ian.addGrade(90);
+        double iansAverage = ian.getGradeAverage();
+        double ianSumOfGrades = ian.getSumOfGrades();
+
+        adamina.addGrade(99);
+        adamina.addGrade(79);
+        adamina.addGrade(89);
+        adamina.addGrade(69);
+        double adaminasAverage = adamina.getGradeAverage();
+        double adaminaSumOfGrades = adamina.getSumOfGrades();
+
+        nick.addGrade(88);
+        nick.addGrade(98);
+        nick.addGrade(78);
+        nick.addGrade(92);
+        double nicksAverage = nick.getGradeAverage();
+        double nickSumOfGrades = nick.getSumOfGrades();
+
+        // adding students to hashmap
+        students.put("tokenCoding", jackie);
+        students.put("iansLame", ian);
+        students.put("minaGoat", adamina);
+        students.put("covidFree", nick);
+
+        System.out.println("Jackie's grades: " + jackie.grades);
+        System.out.println("Ian's grades: " + ian.grades);
+        System.out.println("Adamina's grades: " + adamina.grades);
+        System.out.println("Nick's grades: " + nick.grades);
+
+        openingStatement();
+    }
+
 //    public static void seeAllGrades(ArrayList<S>){
 //
 //        TreeMap<String, Integer> studentGrades = new TreeMap<>();
@@ -131,6 +186,9 @@ public class GradesApplication {
 
 
     public static void main(String[] args) {
+
+
+
         openingStatement();
     }
 

@@ -6,13 +6,17 @@ public class Student {
 
     // properties
     private String name;
-    private ArrayList<Integer> grades;
+    public ArrayList<Integer> grades;
 
     // constructors
-    public Student (String studentName, ArrayList<Integer> studentGrades) {
+    public Student (String studentName) {
         this.name = studentName;
-        this.grades = studentGrades;
+//        this.grades = studentGrades;
+        this.grades = new ArrayList<>();
     }
+//    public ArrayList<Integer> getGrades() {
+//        return this.grades;
+//    }
     public Student(){}
 
     // getters
@@ -21,20 +25,20 @@ public class Student {
     }
     // add a grade
     public void addGrade (int grade) {
-        grades.add(grade);
+        this.grades.add(grade);
     }
     // returns average grade
     public double getGradeAverage() {
         double sumOfGrades = 0;
-        for (int i: grades) {
-            sumOfGrades += i;
+        for (int grade: this.grades) {
+            sumOfGrades += grade;
         }
-        return Math.round(sumOfGrades/grades.size());
+        return Math.round(sumOfGrades/this.grades.size());
     }
     // returns sum of all grades
     public double getSumOfGrades() {
         double sumOfGrades = 0;
-        for (int i : grades) {
+        for (int i : this.grades) {
             sumOfGrades += i;
         }
         return sumOfGrades;
@@ -52,13 +56,13 @@ public class Student {
 
 
     public static void main(String[] args) {
-        Student jackie = new Student("Jackie", new ArrayList<>());
-
-        jackie.grades.add(89);
-        System.out.println(jackie.grades);
-        jackie.grades.add(88);
-        jackie.grades.add(74);
-        System.out.println("jackie.getGradeAverage() = " + jackie.getGradeAverage());
+//        Student jackie = new Student("Jackie", new ArrayList<>());
+//
+//        jackie.grades.add(89);
+//        System.out.println(jackie.grades);
+//        jackie.grades.add(88);
+//        jackie.grades.add(74);
+//        System.out.println("jackie.getGradeAverage() = " + jackie.getGradeAverage());
     }
 
 
