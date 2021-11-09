@@ -1,12 +1,14 @@
 package Grades;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Student {
 
     // properties
     private String name;
     public ArrayList<Integer> grades;
+    public HashMap<String, String> attendance;
 
     // constructors
     public Student (String studentName) {
