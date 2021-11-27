@@ -19,6 +19,8 @@ public class GameOfWar {
 
         while(activeGame) {
 
+            Scanner scanner = new Scanner(System.in);
+
             // set players
             Player playerOne = new Player("Player One");
             Player playerTwo = new Player("Player Two");
@@ -32,30 +34,54 @@ public class GameOfWar {
             Card playerTwoCard = playerTwo.hand[randomCard.nextInt(playerTwo.hand.length)];
 
             if (playerOneCard.value == playerTwoCard.value) {
+                roundCounter++;
+                System.out.printf("Round %s.%n", roundCounter);
+
                 System.out.printf("Player One Card: %s %s%n", playerOneCard.suit, playerOneCard.value);
                 System.out.printf("Player Two Card: %s %s%n", playerTwoCard.suit, playerTwoCard.value);
                 System.out.println("It's a tie. No points scored.");
+                System.out.printf("""
+                        Player One Rounds Won: %s
+                        Player Two Rounds Won: %s
+                        """, playerOneRoundsWon, playerTwoRoundsWon);
                 System.out.println("------------------------------");
-                roundCounter++;
+                System.out.println("Press Enter to go to next round.");
+                scanner.nextLine();
             } else if (playerOneCard.value > playerTwoCard.value) {
+                roundCounter++;
+                System.out.printf("Round %s.%n", roundCounter);
+
                 System.out.printf("Player One Card: %s %s%n", playerOneCard.suit, playerOneCard.value);
                 System.out.printf("Player Two Card: %s %s%n", playerTwoCard.suit, playerTwoCard.value);
                 System.out.println("Player One wins the round.");
                 playerOneScore++;
-                roundCounter++;
+
                 playerOneRoundsWon++;
-                System.out.printf("Round %s.%n", roundCounter);
+                System.out.printf("""
+                        Player One Rounds Won: %s
+                        Player Two Rounds Won: %s
+                        """, playerOneRoundsWon, playerTwoRoundsWon);
                 System.out.println("------------------------------");
+                System.out.println("Press Enter to go to next round.");
+                scanner.nextLine();
 
             } else {
+                roundCounter++;
+                System.out.printf("Round %s.%n", roundCounter);
+
+
                 System.out.printf("Player One Card: %s %s%n", playerOneCard.suit, playerOneCard.value);
                 System.out.printf("Player Two Card: %s %s%n", playerTwoCard.suit, playerTwoCard.value);
                 System.out.println("Player Two wins the round.");
                 playerTwoScore++;
-                roundCounter++;
                 playerTwoRoundsWon++;
-                System.out.printf("Round %s.%n", roundCounter);
+                System.out.printf("""
+                        Player One Rounds Won: %s
+                        Player Two Rounds Won: %s
+                        """, playerOneRoundsWon, playerTwoRoundsWon);
                 System.out.println("------------------------------");
+                System.out.println("Press Enter to go to next round.");
+                scanner.nextLine();
 
             }
             if (roundCounter == 26) {
@@ -72,13 +98,7 @@ public class GameOfWar {
                 }
                 activeGame = false;
     }
-
-
-
-
-
             }
-
     }
 
     public static void main(String[] args) {
